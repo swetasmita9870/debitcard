@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debit card</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@200&family=Palette+Mosaic&family=Red+Hat+Mono:wght@300&family=Seymour+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <center><h1>FEDRAL BANK</h1></center>
+  <hr>
+   <div class="container">
+    <form action="">
+       <div class="cont1">
+         <div class="cardnum">
+           <h4 class="Bank_name">Fi</h4>
+         </div>
+         <div class="cardname">
+           <p class="card_type">Debit Card</p>
+         </div>
+       </div>
+       <div class="maincont">
+        <label for="cardnumber">CARD NUMBER</label><br><br>
+        <input maxlength="19" id="cardnumber" type="tele" inputmode="numeric" placeholder="0000 0000 0000 0000" ><br><br>
+        <label for="Costumername">CARD HOLDER NAME</label><br><br>
+        <input id="card_holder" type="text" placeholder="Eg.SWETASMITA RANJAN SAHOO"><br><br>
+        <div class="cont2">
+         <label for="expiry">CARD EXPIRY</label><br><br>
+          
+          <label for="cvv">CVV</label><br><br>
+          
+        </div>
+        <div class="cont2">
+          <input id="cardexpiry" type="tele" name="card_expiry" placeholder="mm/yy" maxlength="5" >
+         <!-- <input type="month"id="expiry" min="1" max="12" value="12-1998"><br><br> -->
+         <input type="tele" id="cvv"placeholder=" " maxlength="3"><br><br>
+        </div>
+       </div>
+    </form>
+    <div class="logo">
+      <img class="visa" src="/visa-logo-png-image-png-arts-453451.png" alt="">
+      <img class="fedral" src="/Federal-Bank-Logo-PNG.png" alt="">
+    </div>
+   </div>
+   <script>
+     document.getElementById('cardnumber').addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+  });
+   document.getElementById('cardexpiry').addEventListener('input', (e) => {
+     e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{2})/g,'$1/').trim().slice(0,5)
+   } );
+     
+   </script>
+   <button  class="btn" onclick="myfunc()">PAY</button>
+
+</body>
+<script src="/script.js"></script>
+</html>
